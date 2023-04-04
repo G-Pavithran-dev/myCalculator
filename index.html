@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg,pink,blue,red);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        label{
+            color: beige;
+            font-family: 'Times New Roman', Times, serif;
+            padding-bottom: 10px;
+        }
+        input{
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: black;
+            color: green;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        h1{
+            color: bisque;
+            padding-bottom:20px;
+        }
+
+        
+        button{
+            border-radius: 6px;
+            width:auto;
+            height:40px;
+            background-color: blue;
+            color:white;
+            font-weight: 700;
+            margin-top:8px;
+            margin-bottom: 10px;
+        }
+        button:hover{
+            background-color: blueviolet;
+            color:beige
+        }
+        #creator{
+            color: lightcyan;
+            user-select: none;
+            opacity: 0.25;
+        }
+
+        .s4{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #heading{
+            animation-name: animate;
+            animation-duration: 10s;
+            animation-direction: alternate;
+            opacity: 0;
+            animation-iteration-count: 1;
+        }
+        #info{
+            opacity: 0;
+            animation-name: animate;
+            animation-play-state: running;
+            animation-direction: alternate;
+            animation-duration: 5s;
+            animation-iteration-count: 100;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        @keyframes animate {
+            form{opacity: 0;}
+            to{opacity: 1;}
+        }
+        #answer{
+            color:black;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">My Calculator</h1>
+    <section class="s1">
+        <label for="num1">Enter Your 1st number:</label>
+        <input type="number" name="num1" id="num1" max="15">
+    </section>
+    <section class="s2">
+        <label for="num2">Enter Your 2nd number:</label>
+        <input type="number" name="num2" id="num2" maxlength="15">
+    </section>
+    <section class="s3">
+        <label for="oper">What operation you need:</label>
+        <input type="text" name="oper" id="operation">
+    </section>
+    <section class="s4">
+        <button type="button" value="Calculate" onclick="calculate()">Calculate</button>
+        <p id="info" class="word-appear">'+'- addition '-' - subtractoin '*' - multiplication '/' - division '%' - modulus '^' - power</p>
+    </section>
+    <h1 id="answer"></h1>
+    <h3 id="creator">Developed by G.Pavithran</h3>
+    
+
+    <script>
+        function calculate(){
+            let a=document.getElementById("num1").value;
+            let b=document.getElementById("num2").value;
+            let c=document.getElementById("operation").value
+            let num1=parseFloat(a);
+            let num2=parseFloat(b);
+            let op=c;
+            
+            if(a==""||b==""||c=="")
+            {
+                alert("Don't Leave the fields empty");
+            }
+            
+            else{
+                switch (op) {
+                    case '+':
+                        var ans=num1+num2;
+                        break;
+
+                    case '-':
+                        var ans=num1-num2;
+                        break;
+
+                    case '*':
+                        var ans=num1*num2;
+                        break;
+
+                    case '/':
+                        var ans=num1/num2;
+                        break;
+
+                    case '%':
+                        var ans=num1%num2;    
+                        break;
+                    
+                    case '^':
+                        var ans=num1**num2;
+                        break;
+
+                    default:
+                        var ans="Enter a valid operation";
+                        break;
+                }
+               if(ans=="Enter a valid operation")
+               {
+                document.getElementById("answer").innerHTML= ans;
+               }
+               else{
+                document.getElementById("answer").innerHTML="Your answer is : " + num1 + " " + op + " " + num2 + " " + "=" + " " +ans;
+               }
+            }
+        }
+    </script>
+</body>
+</html>
