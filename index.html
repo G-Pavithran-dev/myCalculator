@@ -13,21 +13,22 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(180deg,#A9C9FF,#FFBBEC);
+            background-image: linear-gradient(-225deg, #9EFBD3 0%, #57E9F2 48%, #45D4FB 100%);
             background-repeat: no-repeat;
             background-size: cover;
         }
         label{
-            color: beige;
+            color: brown;
             font-family: 'Times New Roman', Times, serif;
             padding-bottom: 10px;
+            font-weight: 550;
         }
         input{
             width: 100px;
             height: 30px;
             border-radius: 5px;
             background-color: black;
-            color: green;
+            color: rgb(255, 255, 255);
             font-weight: 700;
             margin-bottom: 10px;
         }
@@ -41,20 +42,20 @@
             border-radius: 6px;
             width:auto;
             height:40px;
-            background-color: blue;
+            background: linear-gradient(45deg,blueviolet,violet);
             color:white;
             font-weight: 700;
             margin-top:8px;
             margin-bottom: 10px;
         }
         button:hover{
-            background-color: blueviolet;
+            background: linear-gradient(45deg,violet,blueviolet);
             color:beige
         }
         #creator{
-            color: lightcyan;
+            color: darkblue;
             user-select: none;
-            opacity: 0.25;
+            opacity: 0.50;
         }
 
         .s4{
@@ -63,11 +64,12 @@
             align-items: center;
         }
         #heading{
+            color: darkgoldenrod;
             animation-name: animate;
             animation-duration: 10s;
             animation-direction: alternate;
             opacity: 0;
-            animation-iteration-count: 1;
+            animation-iteration-count: 10;
         }
         #info{
             opacity: 0;
@@ -85,7 +87,7 @@
             to{opacity: 1;}
         }
         #answer{
-            color:black;
+            color:orangered;
             font-weight: 800;
         }
     </style>
